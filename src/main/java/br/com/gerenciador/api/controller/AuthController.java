@@ -30,6 +30,11 @@ public class AuthController {
         return ResponseEntity.ok(authService.login(request));
     }
 
+    @GetMapping("/ping")
+    public ResponseEntity<String> ping() {
+        return ResponseEntity.ok("Pong!");
+    }
+
     @GetMapping("/me")
     public ResponseEntity<UsuarioResponseDTO> getMe() {
         var authentication = SecurityContextHolder.getContext().getAuthentication();
